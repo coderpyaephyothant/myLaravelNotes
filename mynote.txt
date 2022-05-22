@@ -1,0 +1,38 @@
+Laravel အခြေခံနုတ်များ From Aprogrammer ဆရာ လှိုင်တင်ထွန်း။ Written by  ပြည့်ဖြိုးသန့်။
+
+1.Dinamic dataဖန်တီးထည့်
+{{}} laravel blade engine function --> for xss attack. *Like htmlentities in pure php as xss attack cover..*
+- storage->framework->views ... {{}} => <?php echo e($data); ?>.
+-Dinamic data -> 
+
+		$parameter = request('Name');
+		return view('', ['data' => $parameter]);  .
+// this is Route and View Basic///
+
+Good Afternoon -> 31.04 time finished.....
+
+2. route -> controller
+
+php artisan ဆိုပြီး gitbash မှာ ရိုက်မယ်။
+php artisan make::controller --help => menu.... ပေါ်လာမယ်။
+php artisan make::controller controllerName ရိုက်ရင် controllers ရဲ့ အောက်မှာ controller အသစ်ဆောက်ပြီးပါမယ်။
+routes အောက်က web.php မှာ
+"use Illuminate\Support\Facades\Route;
+Route::get('/', [Controller Name :: class, 'index']);
+"
+
+3.database
+
+Migration က tableတွေဆောက်။
+Connections က (.env )ဒေတာဘေ့စ် နဲ့ ချိတ်ရန်။
+Seeders က eg-တစ်ကြောင်းခြင်းစီ။
+Factories က eg- အုပ်စုလိုက်စီ။
+
+4.Roll Back  & Reset & refresh
+php artisan migrate:rollback က controlZ သဘောနဲ့အတူတူပါပဲ။
+ဒေတာဘေ့စ်ထဲက migration fileတွေကို ပြန်ထုတ်လိုက်တာပေါ့လေ။
+php artisan migrate:reset က အားလုံးကိုပြန်ဖျက်တာပါပဲ။
+php artisan migrate:refresh က ပထမဆုံး migrate:rollback လုပ် ပီး နောက်တခါ migrateပြန်လုပ်တာပါ။
+php artisan migrate:fresh က ရှိပြီးသားtableတွေကို dropလုပ်ပြီး migrateပြန်လုပ်တာပါ။
+
+4.Seeders & Factories
